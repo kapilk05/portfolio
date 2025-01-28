@@ -5,7 +5,6 @@ import css from "../assets/css.png";
 import javascript from "../assets/javascript.png";
 import reactImage from "../assets/react.png";
 import python from "../assets/python.png";
-import nodejs from "../assets/node.png";
 import github from "../assets/github.png";
 import tailwind from "../assets/tailwind.png";
 import tensorflow from "../assets/portfolio/tensorflow.png";
