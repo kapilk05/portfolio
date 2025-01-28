@@ -2,7 +2,38 @@ import React, { useState } from 'react';
 
 const Publications = () => {
   const publications = [
-    // Publication data...
+    {
+      name: 'Enhancing Brain Tumor Detection using Federated Learning',
+      codeLink: 'https://github.com/your-repo/brain-tumor-detection',
+      paperLink: 'https://scholar.google.com/brain-tumor-detection',
+      description:
+        'This paper explores the use of federated learning and explainable AI to improve the accuracy and interpretability of brain tumor detection models.',
+      underReview: true,
+    },
+    {
+      name: 'Hybrid Predictive Modeling for F1 Race Outcomes: Integrating Random Forest and Graph Neural Networks',
+      codeLink: 'https://github.com/your-repo/f1-race-gnn',
+      paperLink: 'https://scholar.google.com/f1-race-prediction',
+      description:
+        'A novel approach combining Random Forest and Graph Neural Networks for predicting F1 race outcomes, incorporating temporal and relational data for better predictions.',
+      underReview: true,
+    },
+    {
+      name: 'Dynamic Neural Style Transfer for Artistic Image Generation using VGG19',
+      codeLink: 'https://github.com/kapilk05/Artisitic-Neural-Style-Transfer',
+      paperLink: 'https://ijercse.com/dynamic-neural-style.php',
+      description:
+        'This paper introduces a neural style transfer system that allows flexible adjustments to style weight ratios and reduces processing time using VGG19.',
+      underReview: false,
+    },
+    {
+      name: 'Patent Novelty Assessment: Accelerating Innovation and Patent Prosecution',
+      codeLink: 'https://github.com/kapilk05/IPD',
+      paperLink: 'https://ijirt.org/Article?manuscript=169704',
+      description:
+        'This paper presents a system that assesses the novelty of patents using Chinese patent data, aiding innovation and research.',
+      underReview: false,
+    },
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,7 +64,7 @@ const Publications = () => {
         </div>
 
         {/* Publications Container */}
-        <div className="space-y-8"> {/* Adds spacing between the publications */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {publications.map((publication, index) => (
             <div
               key={index}
