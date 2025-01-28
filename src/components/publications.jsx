@@ -4,7 +4,7 @@ const Publications = () => {
   const publications = [
     {
       name: 'Enhancing Brain Tumor Detection using Federated Learning',
-      codeLink: 'https://github.com/your-repo/brain-tumor-detection',
+      codeLink: 'https://github.com/kapilk05/Brain-Tumor-Detection',
       paperLink: 'https://scholar.google.com/brain-tumor-detection',
       description:
         'This paper explores the use of federated learning and explainable AI to improve the accuracy and interpretability of brain tumor detection models.',
@@ -12,7 +12,7 @@ const Publications = () => {
     },
     {
       name: 'Hybrid Predictive Modeling for F1 Race Outcomes: Integrating Random Forest and Graph Neural Networks',
-      codeLink: 'https://github.com/your-repo/f1-race-gnn',
+      codeLink: 'https://github.com/kapilk05/Hybrid-F1-Predictions',
       paperLink: 'https://scholar.google.com/f1-race-prediction',
       description:
         'A novel approach combining Random Forest and Graph Neural Networks for predicting F1 race outcomes, incorporating temporal and relational data for better predictions.',
