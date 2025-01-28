@@ -15,23 +15,12 @@ const About = () => {
 
         <p className="text-xl mt-20">
           Hello there!!<br></br>
-          My name is Kapil Kashyap and I am a Front-End Web developer 
-          and a Ui-Ux Designer. I am also a avid block-chain enthusiast 
-          who is looking forward for doing more porjects under the 
-          blockchain domain.
+          I am a passionate Computer Engineering student with a deep interest in Machine Learning, Deep Learning, and Business Analytics. Currently pursuing my bachelor's degree, I focus on leveraging advanced algorithms for research and real-world applications. My expertise spans across areas like image classification, natural language processing (NLP), and graph neural networks (GNN), with projects ranging from brain tumor detection to F1 race winner predictions. I have honed my leadership and technical skills through various roles, including Technical Head, Secretary, and Vice Chairperson Marketing for college organizations. I am driven to contribute to cutting-edge research and apply AI technologies to solve impactful problems.
         </p>
 
         <br />
 
-        <p className="text-xl">
-          I have Served 2 Internships in the field of Business Development
-          <br></br>
-          1. Aiesec in Mumbai ( Jan 2022 - March 2023)<br></br>
-          2. ParkIt.biz (June 2023 - August 2023)<br></br>
-          I am having a lot of connections in the industry and I am looking forward for 
-          improving the experience that I have under this domain, while 
-          I continue to work on myself 
-        </p>
+    
       </div>
     </div>
   );

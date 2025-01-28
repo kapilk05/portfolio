@@ -1,6 +1,16 @@
 import React from "react";
 
 const Contact = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Show a confirmation message
+    alert("Your message was sent!");
+
+    // Refresh the page
+    window.location.reload();
+  };
+
   return (
     <div
       name="get in touch"
@@ -9,16 +19,17 @@ const Contact = () => {
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Contact
+            Reach Out to Me :)
           </p>
-          <p className="py-6">Submit the form below to get in touch with me</p>
+          <p className="py-6">Send a message!!</p>
         </div>
 
-        <div className=" flex justify-center items-center">
+        <div className="flex justify-center items-center">
           <form
             action="https://getform.io/f/da0e92ee-769a-464f-81e8-17d1347cc7c7"
             method="POST"
-            className=" flex flex-col w-full md:w-1/2"
+            className="flex flex-col w-full md:w-1/2"
+            onSubmit={handleSubmit} // Added onSubmit handler
           >
             <input
               type="text"

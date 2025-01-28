@@ -1,12 +1,14 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Experience from "./components/Experience";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import SocialLinks from "./components/SocialLinks";
 import WorkExp from "./components/Work-Exp";
-
+import Publications from "./components/publications";
+import Skills from "./components/skills"; // Import Skills component instead of Experience
+import Achievements from "./components/achievements"; // Import Achievements component
+import PoR from "./components/PoR"; // Import PoR component
 
 function App() {
   return (
@@ -15,7 +17,10 @@ function App() {
       <Home />
       <About />
       <Projects />
-      <Experience />
+      <Publications />
+      <Achievements /> {/* Render Achievements component here */}
+      <PoR /> {/* Render PoR component here */}
+      <Skills /> {/* Render Skills component here */}
       <WorkExp />
       <Contact />
       <SocialLinks />

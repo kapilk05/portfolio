@@ -20,14 +20,26 @@ const NavBar = () => {
     },
     {
       id: 4,
-      link: "experience",
+      link: "publications",
     },
     {
       id: 5,
-      link: "work experience",
+      link: "skills", // Added achievements link
     },
     {
       id: 6,
+      link: "work experience",
+    },
+    {
+      id: 7,
+      link: "achievements",
+    },
+    {
+      id: 8,
+      link: "position-of-responsibility", // Added Position of Responsibility link
+    },
+    {
+      id: 9,
       link: "get in touch",
     },
   ];
@@ -82,4 +94,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
