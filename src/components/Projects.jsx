@@ -8,7 +8,7 @@ const Projects = () => {
     {
       id: 1,
       name: "Weighted Voting Detection for Liver Fibrosis and Cirrhosis",
-      githubLink: "https://github.com/kapilk05/final-year-project",
+      githubLink: "https://kapil-fyp.streamlit.app/",
       description:
         "Integrated clinical data analysis (XGBoost) and ultrasound image classification (DenseNet-201) for non-invasive liver disease detection. Developed a novel soft voting classifier, improving diagnostic accuracy to 92.5%.",
       techStack: "XGBoost, DenseNet-201, Soft Voting Classifier",
@@ -48,7 +48,11 @@ const Projects = () => {
   ];
 
   return (
-    <div className="bg-gray-900 w-full text-white min-h-screen p-8">
+    <div
+      id="projects"  // Important for smooth scroll - matches navbar link 'Projects' but lowercase!
+      className="bg-gray-900 w-full text-white min-h-screen p-8"
+      style={{ scrollMarginTop: '80px' }} // Prevent content hiding behind fixed navbar
+    >
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold text-center border-b-4 border-gray-500 pb-4">
           Projects
@@ -69,14 +73,14 @@ const Projects = () => {
 
               {/* Buttons */}
               <div className="flex mt-4 gap-4">
-                {/* Code Button */}
+                {/* Demo Button */}
                 <a
                   href={portfolio.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600"
                 >
-                  Code
+                  Demo
                 </a>
 
                 {/* Tech Stack Button */}
@@ -101,7 +105,7 @@ const Projects = () => {
 
         {/* Project Description Popup */}
         {selectedProject && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm">
               <h2 className="text-xl font-semibold text-gray-800">
                 Project Description
@@ -119,7 +123,7 @@ const Projects = () => {
 
         {/* Tech Stack Popup */}
         {selectedTechStack && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm">
               <h2 className="text-xl font-semibold text-gray-800">Tech Stack</h2>
               <p className="text-gray-700 mt-2">{selectedTechStack.techStack}</p>
