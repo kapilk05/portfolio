@@ -34,22 +34,20 @@ const WorkExp = () => {
   }, [showDescription]);
 
   // Close modal if clicking outside modal content
-  const handleClickOutside = (event) => {
-    if (modalRef.current && !modalRef.current.contains(event.target)) {
-      handleCloseDescription();
-    }
-  };
-
   useEffect(() => {
-    if (showDescription) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
+    if (!showDescription) return; // If no modal, no event listener
+
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        handleCloseDescription();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [showDescription]);
+  }, [showDescription]); // Now handleClickOutside is inside useEffect, no missing deps
 
   return (
     <div
