@@ -94,7 +94,7 @@ const WorkExp = () => {
             </div>
             <div className="ml-10">
               <h2 className="text-xl font-semibold">Processor Architecture and Information Security</h2>
-              <p className="text-sm text-gray-400">Date: Oct 2022 - Present</p>
+              <p className="text-sm text-gray-400">Aug 2024 - May 2025</p>
             </div>
           </div>
 
@@ -126,7 +126,7 @@ const WorkExp = () => {
             </div>
             <div className="ml-10">
               <h2 className="text-xl font-semibold">Web Developer</h2>
-              <p className="text-sm text-gray-400">Date: Jun 2023 - Aug 2023</p>
+              <p className="text-sm text-gray-400">Jun 2024 - July 2024</p>
             </div>
           </div>
 
@@ -158,7 +158,7 @@ const WorkExp = () => {
             </div>
             <div className="ml-10">
               <h2 className="text-xl font-semibold">Business and Sales Intern</h2>
-              <p className="text-sm text-gray-400">Date: Mar 2023 - Present</p>
+              <p className="text-sm text-gray-400">June 2023 - August 2023</p>
             </div>
           </div>
 
@@ -190,7 +190,7 @@ const WorkExp = () => {
             </div>
             <div className="ml-10">
               <h2 className="text-xl font-semibold">Junior Manager - Incoming Corporate Sector</h2>
-              <p className="text-sm text-gray-400">Date: Feb 2022 - Jan 2023</p>
+              <p className="text-sm text-gray-400">Feb 2022 - Jan 2023</p>
             </div>
           </div>
         </div>
