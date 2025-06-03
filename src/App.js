@@ -1,16 +1,29 @@
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Home from "./components/Home";
+import React, { useState, useEffect } from "react";
+import Loader from "./components/Loader"; // import your loader component
 import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
 import Projects from "./components/Projects";
-import SocialLinks from "./components/SocialLinks";
-import WorkExp from "./components/Work-Exp";
 import Publications from "./components/publications";
-import Skills from "./components/skills"; // Import Skills component instead of Experience
-import Achievements from "./components/achievements"; // Import Achievements component
-import PoR from "./components/PoR"; // Import PoR component
+import Achievements from "./components/achievements";
+import PoR from "./components/PoR";
+import Skills from "./components/skills";
+import WorkExp from "./components/Work-Exp";
+import Contact from "./components/Contact";
+import SocialLinks from "./components/SocialLinks";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000); // 3 seconds loader
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div>
       <Navbar />
@@ -18,9 +31,9 @@ function App() {
       <About />
       <Projects />
       <Publications />
-      <Achievements /> {/* Render Achievements component here */}
-      <PoR /> {/* Render PoR component here */}
-      <Skills /> {/* Render Skills component here */}
+      <Achievements />
+      <PoR />
+      <Skills />
       <WorkExp />
       <Contact />
       <SocialLinks />

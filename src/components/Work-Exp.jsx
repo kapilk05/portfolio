@@ -1,45 +1,43 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const WorkExp = () => {
-  const [showDescription, setShowDescription] = useState(null);
+  const [showImage, setShowImage] = useState(null);
   const modalRef = useRef(null);
 
   const handleDownload = (fileName) => {
     const link = document.createElement('a');
-    link.href = `/internships/${fileName}.pdf`; // Corrected path
-    link.target = '_blank'; // Open in a new tab
-    link.download = `${fileName}.pdf`; // Optional: triggers download
+    link.href = `/internships/${fileName}.pdf`;
+    link.target = '_blank';
+    link.download = `${fileName}.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  const handleShowDescription = (description) => {
-    setShowDescription(description);
+  const handleShowImage = (imageName) => {
+    setShowImage(imageName);
   };
 
-  const handleCloseDescription = () => {
-    setShowDescription(null);
+  const handleCloseImage = () => {
+    setShowImage(null);
   };
 
-  // Close modal on Escape key press
   useEffect(() => {
     const handleEsc = (event) => {
-      if (event.key === 'Escape' && showDescription) {
-        handleCloseDescription();
+      if (event.key === 'Escape' && showImage) {
+        handleCloseImage();
       }
     };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
-  }, [showDescription]);
+  }, [showImage]);
 
-  // Close modal if clicking outside modal content
   useEffect(() => {
-    if (!showDescription) return; // If no modal, no event listener
+    if (!showImage) return;
 
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        handleCloseDescription();
+        handleCloseImage();
       }
     };
 
@@ -47,7 +45,7 @@ const WorkExp = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [showDescription]); // Now handleClickOutside is inside useEffect, no missing deps
+  }, [showImage]);
 
   return (
     <div
@@ -66,162 +64,163 @@ const WorkExp = () => {
 
         {/* Timeline Container */}
         <div className="relative pl-10" aria-labelledby="work-exp-heading" role="list">
+
           {/* Experience 1 - Teaching Assistant */}
           <div className="mb-12" role="listitem">
             <div className="flex items-center mb-4">
-              <div
-                className="w-6 h-6 rounded-full bg-blue-500"
-                aria-hidden="true"
-              ></div>
+              <div className="w-6 h-6 rounded-full bg-blue-500" aria-hidden="true"></div>
               <button
                 onClick={() => handleDownload('teaching-assistant')}
                 className="ml-4 text-2xl font-bold text-white cursor-pointer hover:underline focus:outline-none"
                 aria-label="Download Teaching Assistant Internship PDF"
               >
-                Teaching Assistant | DJSCE
+                Dwarkadas Jivanlal Sanghvi College of Engineering
               </button>
               <button
-                onClick={() =>
-                  handleShowDescription(
-                    'Assisted in teaching Processor Architecture and Information Security, created lecture materials, and guided students in labs.'
-                  )
-                }
-                className="ml-4 w-6 h-6 rounded-full bg-gray-600 text-white text-xs flex justify-center items-center hover:bg-gray-500 focus:outline-none"
-                aria-label="Show description for Teaching Assistant role"
+                onClick={() => handleShowImage('teaching-assistant.jpg')}
+                className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
+                aria-label="View Certificate for Teaching Assistant role"
               >
-                i
+                View Certificate
               </button>
             </div>
             <div className="ml-10">
+<<<<<<< HEAD
               <h2 className="text-xl font-semibold">Processor Architecture and Information Security</h2>
               <p className="text-sm text-gray-400">Aug 2024 - May 2025</p>
+=======
+              <h2 className="text-xl font-semibold">Teaching Assistant</h2>
+              <p className="text-sm text-gray-400">Aug 2024 - May 2025</p>
+              <p className="mt-2 max-w-xl text-gray-300">
+                Assisted in teaching Processor Architecture and Organization and Information Security under Asst. Prof. Chinmay Raut, helping 80+ students grasp complex concepts. Created 15+ well-structured notes and interactive slides, improving student comprehension and engagement. Provided 1-on-1 mentorship to struggling students, resulting in a 20% improvement in average test scores.
+              </p>
+>>>>>>> a20600d (Add terminal-style loading screen and center it)
             </div>
           </div>
 
           {/* Experience 2 - Web Developer */}
           <div className="mb-12" role="listitem">
             <div className="flex items-center mb-4">
-              <div
-                className="w-6 h-6 rounded-full bg-green-500"
-                aria-hidden="true"
-              ></div>
+              <div className="w-6 h-6 rounded-full bg-green-500" aria-hidden="true"></div>
               <button
                 onClick={() => handleDownload('suvidha')}
                 className="ml-4 text-2xl font-bold text-white cursor-pointer hover:underline focus:outline-none"
                 aria-label="Download Web Developer Internship PDF"
               >
-                Web Developer | Suvidha Foundation
+                Suvidha Foundation
               </button>
               <button
-                onClick={() =>
-                  handleShowDescription(
-                    'Developed web applications, focusing on improving user experience and increasing the foundation’s digital outreach.'
-                  )
-                }
-                className="ml-4 w-6 h-6 rounded-full bg-gray-600 text-white text-xs flex justify-center items-center hover:bg-gray-500 focus:outline-none"
-                aria-label="Show description for Web Developer role"
+                onClick={() => handleShowImage('suvidha.jpg')}
+                className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
+                aria-label="View Certificate for Web Developer role"
               >
-                i
+                View Certificate
               </button>
             </div>
             <div className="ml-10">
               <h2 className="text-xl font-semibold">Web Developer</h2>
               <p className="text-sm text-gray-400">Jun 2024 - July 2024</p>
+<<<<<<< HEAD
+=======
+              <p className="mt-2 max-w-xl text-gray-300">
+                Designed and developed responsive web pages for organizational campaigns, improving user engagement by 25% and streamlining access to resources for over 500 users, reducing load times by 40%.
+              </p>
+>>>>>>> a20600d (Add terminal-style loading screen and center it)
             </div>
           </div>
 
           {/* Experience 3 - Business Development Intern */}
           <div className="mb-12" role="listitem">
             <div className="flex items-center mb-4">
-              <div
-                className="w-6 h-6 rounded-full bg-orange-500"
-                aria-hidden="true"
-              ></div>
+              <div className="w-6 h-6 rounded-full bg-orange-500" aria-hidden="true"></div>
               <button
                 onClick={() => handleDownload('parkit')}
                 className="ml-4 text-2xl font-bold text-white cursor-pointer hover:underline focus:outline-none"
                 aria-label="Download Business Development Internship PDF"
               >
-                Business Development Intern | ParkIt.Biz
+                ParkIt.Biz
               </button>
               <button
-                onClick={() =>
-                  handleShowDescription(
-                    'Worked in business development, focusing on lead generation, improving user acquisition, and assisting with sales strategies.'
-                  )
-                }
-                className="ml-4 w-6 h-6 rounded-full bg-gray-600 text-white text-xs flex justify-center items-center hover:bg-gray-500 focus:outline-none"
-                aria-label="Show description for Business Development Intern role"
+                onClick={() => handleShowImage('parkit.jpg')}
+                className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
+                aria-label="View Certificate for Business Development Intern role"
               >
-                i
+                View Certificate
               </button>
             </div>
             <div className="ml-10">
+<<<<<<< HEAD
               <h2 className="text-xl font-semibold">Business and Sales Intern</h2>
               <p className="text-sm text-gray-400">June 2023 - August 2023</p>
+=======
+              <h2 className="text-xl font-semibold">Business Development and Sales Intern</h2>
+              <p className="text-sm text-gray-400">June 2023 - August 2023</p>
+              <p className="mt-2 max-w-xl text-gray-300">
+                Executed targeted lead generation campaigns through social media channels, resulting in a 60% increase in engagement rates; analyzed campaign performance metrics to refine future strategies and optimize outreach efforts. Partnered with the HR department to optimize recruitment workflows and boost employee engagement, driving organizational growth and efficiency.
+              </p>
+>>>>>>> a20600d (Add terminal-style loading screen and center it)
             </div>
           </div>
 
           {/* Experience 4 - Junior Manager */}
           <div className="mb-12" role="listitem">
             <div className="flex items-center mb-4">
-              <div
-                className="w-6 h-6 rounded-full bg-red-500"
-                aria-hidden="true"
-              ></div>
+              <div className="w-6 h-6 rounded-full bg-red-500" aria-hidden="true"></div>
               <button
                 onClick={() => handleDownload('aiesec')}
                 className="ml-4 text-2xl font-bold text-white cursor-pointer hover:underline focus:outline-none"
                 aria-label="Download Junior Manager Internship PDF"
               >
-                Junior Manager | AIESEC in Mumbai
+                AIESEC in Mumbai
               </button>
               <button
-                onClick={() =>
-                  handleShowDescription(
-                    'Led and managed incoming corporate sector internships, coordinated with corporates, and collaborated with international teams for smooth operations.'
-                  )
-                }
-                className="ml-4 w-6 h-6 rounded-full bg-gray-600 text-white text-xs flex justify-center items-center hover:bg-gray-500 focus:outline-none"
-                aria-label="Show description for Junior Manager role"
+                onClick={() => handleShowImage('aiesec.jpg')}
+                className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
+                aria-label="View Certificate for Junior Manager role"
               >
-                i
+                View Certificate
               </button>
             </div>
             <div className="ml-10">
+<<<<<<< HEAD
               <h2 className="text-xl font-semibold">Junior Manager - Incoming Corporate Sector</h2>
               <p className="text-sm text-gray-400">Feb 2022 - Jan 2023</p>
+=======
+              <h2 className="text-xl font-semibold">Junior Manager for Incoming Corporate Sector</h2>
+              <p className="text-sm text-gray-400">Feb 2022 - Jan 2023</p>
+              <p className="mt-2 max-w-xl text-gray-300">
+                Established partnerships with premier organizations like St. Regis and fostered collaborations with 8 entities across 3 countries to strengthen global ties. Orchestrated a high-impact conference in Silvassa for 100 delegates, generating ₹5.4 lakh in revenue and delivering an exceptional participant experience.
+              </p>
+>>>>>>> a20600d (Add terminal-style loading screen and center it)
             </div>
           </div>
         </div>
       </div>
 
-      {/* Role Description Popup */}
-      {showDescription && (
+      {/* Certificate Image Modal */}
+      {showImage && (
         <div
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4"
         >
           <div
             ref={modalRef}
-            className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative"
+            className="bg-white p-4 rounded-lg shadow-lg max-w-3xl max-h-full overflow-auto relative"
           >
             <button
-              onClick={handleCloseDescription}
-              aria-label="Close description modal"
-              className="absolute top-2 right-2 text-2xl text-gray-600 hover:text-black focus:outline-none"
+              onClick={handleCloseImage}
+              aria-label="Close certificate modal"
+              className="absolute top-2 right-2 text-3xl font-bold text-gray-600 hover:text-black focus:outline-none"
             >
               &times;
             </button>
-            <h2
-              id="modal-title"
-              className="text-xl font-semibold text-black mb-4"
-            >
-              Role Description
-            </h2>
-            <p className="text-black">{showDescription}</p>
+            <img
+              src={`/workex/${showImage}`}
+              alt="Certificate"
+              className="max-w-full max-h-[80vh] object-contain"
+            />
           </div>
         </div>
       )}
