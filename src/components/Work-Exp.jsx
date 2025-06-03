@@ -85,16 +85,11 @@ const WorkExp = () => {
               </button>
             </div>
             <div className="ml-10">
-<<<<<<< HEAD
-              <h2 className="text-xl font-semibold">Processor Architecture and Information Security</h2>
-              <p className="text-sm text-gray-400">Aug 2024 - May 2025</p>
-=======
               <h2 className="text-xl font-semibold">Teaching Assistant</h2>
               <p className="text-sm text-gray-400">Aug 2024 - May 2025</p>
               <p className="mt-2 max-w-xl text-gray-300">
                 Assisted in teaching Processor Architecture and Organization and Information Security under Asst. Prof. Chinmay Raut, helping 80+ students grasp complex concepts. Created 15+ well-structured notes and interactive slides, improving student comprehension and engagement. Provided 1-on-1 mentorship to struggling students, resulting in a 20% improvement in average test scores.
               </p>
->>>>>>> a20600d (Add terminal-style loading screen and center it)
             </div>
           </div>
 
@@ -120,12 +115,9 @@ const WorkExp = () => {
             <div className="ml-10">
               <h2 className="text-xl font-semibold">Web Developer</h2>
               <p className="text-sm text-gray-400">Jun 2024 - July 2024</p>
-<<<<<<< HEAD
-=======
               <p className="mt-2 max-w-xl text-gray-300">
                 Designed and developed responsive web pages for organizational campaigns, improving user engagement by 25% and streamlining access to resources for over 500 users, reducing load times by 40%.
               </p>
->>>>>>> a20600d (Add terminal-style loading screen and center it)
             </div>
           </div>
 
@@ -149,16 +141,11 @@ const WorkExp = () => {
               </button>
             </div>
             <div className="ml-10">
-<<<<<<< HEAD
-              <h2 className="text-xl font-semibold">Business and Sales Intern</h2>
-              <p className="text-sm text-gray-400">June 2023 - August 2023</p>
-=======
               <h2 className="text-xl font-semibold">Business Development and Sales Intern</h2>
               <p className="text-sm text-gray-400">June 2023 - August 2023</p>
               <p className="mt-2 max-w-xl text-gray-300">
                 Executed targeted lead generation campaigns through social media channels, resulting in a 60% increase in engagement rates; analyzed campaign performance metrics to refine future strategies and optimize outreach efforts. Partnered with the HR department to optimize recruitment workflows and boost employee engagement, driving organizational growth and efficiency.
               </p>
->>>>>>> a20600d (Add terminal-style loading screen and center it)
             </div>
           </div>
 
@@ -182,16 +169,11 @@ const WorkExp = () => {
               </button>
             </div>
             <div className="ml-10">
-<<<<<<< HEAD
-              <h2 className="text-xl font-semibold">Junior Manager - Incoming Corporate Sector</h2>
-              <p className="text-sm text-gray-400">Feb 2022 - Jan 2023</p>
-=======
               <h2 className="text-xl font-semibold">Junior Manager for Incoming Corporate Sector</h2>
               <p className="text-sm text-gray-400">Feb 2022 - Jan 2023</p>
               <p className="mt-2 max-w-xl text-gray-300">
                 Established partnerships with premier organizations like St. Regis and fostered collaborations with 8 entities across 3 countries to strengthen global ties. Orchestrated a high-impact conference in Silvassa for 100 delegates, generating ₹5.4 lakh in revenue and delivering an exceptional participant experience.
               </p>
->>>>>>> a20600d (Add terminal-style loading screen and center it)
             </div>
           </div>
         </div>
