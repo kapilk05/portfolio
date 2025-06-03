@@ -11,10 +11,10 @@ const NavBar = () => {
     { id: 2, link: "about", label: "About" },
     { id: 3, link: "projects", label: "Projects" },
     { id: 4, link: "publications", label: "Publications" },
-    { id: 5, link: "skills", label: "Skills" },
-    { id: 6, link: "work experience", label: "Work Experience" },
-    { id: 7, link: "achievements", label: "Achievements" },
-    { id: 8, link: "position of responsibility", label: "Positions Of Responsibility" },
+    { id: 5, link: "achievements", label: "Achievements" },
+    { id: 6, link: "position of responsibility", label: "Positions Of Responsibility" },
+    { id: 7, link: "skills", label: "Skills" },
+    { id: 8, link: "work experience", label: "Work Experience" },
     { id: 9, link: "get in touch", label: "Connect over Coffee" },
   ];
 
