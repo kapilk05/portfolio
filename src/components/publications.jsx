@@ -8,7 +8,7 @@ const Publications = () => {
       paperLink: 'https://doi.org/10.63682/jns.v14i17S.4685',
       description:
         'Published in the Journal of Neonatal Surgery a Q3 Scopus Indexed Journal.',
-      underReview: true,
+      underReview: false,
     },
     {
       name: 'Hybrid Predictive Modeling for F1 Race Outcomes: Integrating Random Forest and Graph Neural Networks',
