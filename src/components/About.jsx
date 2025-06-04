@@ -12,12 +12,12 @@ const About = () => {
         <div className="md:w-1/2 flex flex-col gap-6">
           <div>
             <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-              About Me
+              Hobbies!
             </p>
 
             <p className="text-xl mt-6">
               Hello there!!<br />
-              Aspiring Software Developer & Machine Learning Enthusiast with a passion for building scalable tech and solving real-world problems using data.
+              My hobbies mainly include reading, swimming and trekking. Recently I also have a lot of intrest in biking.
             </p>
           </div>
 

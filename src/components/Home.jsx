@@ -8,13 +8,36 @@ const Home = () => {
       name="home"
       className="h-screen w-full bg-gradient-to-b from-black via-black to-gray-800"
     >
-      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
-        <div className="flex flex-col justify-center h-full">
-          <h2 className="text-4xl sm:text-7xl font-bold text-white">
-            ML Dev || Business Analyst
+      <div className="max-w-screen-lg mx-auto flex flex-col justify-center h-full px-4 md:flex-row md:items-start md:justify-start">
+        <div className="flex flex-col justify-center items-start h-full">
+          <div
+            style={{
+              width: 200,
+              height: 300,
+              overflow: "hidden",
+              borderRadius: 20,
+              marginBottom: 24,
+            }}
+          >
+            <img
+              src="/Me.png"
+              alt="Me"
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "cover",
+                objectPosition: "top center",
+                display: "block",
+              }}
+            />
+          </div>
+
+          <h2 className="text-4xl sm:text-6xl font-bold text-white text-left">
+           Kapil Kashyap
           </h2>
-          <p className="text-gray-500 py-4 max-w-md">
-            To get to know me go the abouts section!!!  
+
+          <p className="text-gray-500 py-4 max-w-md text-left">
+            Aspiring ML developer and Software Engineer based in Mumbai.
           </p>
 
           <div>
@@ -31,8 +54,6 @@ const Home = () => {
             </Link>
           </div>
         </div>
-
-        {/* Image section removed */}
       </div>
     </div>
   );

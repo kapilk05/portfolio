@@ -3,12 +3,12 @@ import Loader from "./components/Loader"; // import your loader component
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
+import Skills from "./components/skills";
+import WorkExp from "./components/Work-Exp";
 import Projects from "./components/Projects";
 import Publications from "./components/publications";
 import Achievements from "./components/achievements";
 import PoR from "./components/PoR";
-import Skills from "./components/skills";
-import WorkExp from "./components/Work-Exp";
 import Contact from "./components/Contact";
 import SocialLinks from "./components/SocialLinks";
 
@@ -29,12 +29,12 @@ function App() {
       <Navbar />
       <Home />
       <About />
+      <Skills />
+      <WorkExp />
       <Projects />
       <Publications />
       <Achievements />
       <PoR />
-      <Skills />
-      <WorkExp />
       <Contact />
       <SocialLinks />
     </div>

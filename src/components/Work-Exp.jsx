@@ -4,18 +4,8 @@ const WorkExp = () => {
   const [showImage, setShowImage] = useState(null);
   const modalRef = useRef(null);
 
-  const handleDownload = (fileName) => {
-    const link = document.createElement('a');
-    link.href = `/internships/${fileName}.pdf`;
-    link.target = '_blank';
-    link.download = `${fileName}.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const handleShowImage = (imageName) => {
-    setShowImage(imageName);
+  const handleShowImage = (fileName) => {
+    setShowImage(fileName);
   };
 
   const handleCloseImage = () => {
@@ -63,21 +53,24 @@ const WorkExp = () => {
         </div>
 
         {/* Timeline Container */}
-        <div className="relative pl-10" aria-labelledby="work-exp-heading" role="list">
-
+        <div
+          className="relative pl-10"
+          aria-labelledby="work-exp-heading"
+          role="list"
+        >
           {/* Experience 1 - Teaching Assistant */}
           <div className="mb-12" role="listitem">
             <div className="flex items-center mb-4">
-              <div className="w-6 h-6 rounded-full bg-blue-500" aria-hidden="true"></div>
-              <button
-                onClick={() => handleDownload('teaching-assistant')}
-                className="ml-4 text-2xl font-bold text-white cursor-pointer hover:underline focus:outline-none"
-                aria-label="Download Teaching Assistant Internship PDF"
-              >
+              <div
+                className="w-6 h-6 rounded-full bg-blue-500"
+                aria-hidden="true"
+              ></div>
+              <span className="ml-4 text-2xl font-bold text-white select-none">
                 Dwarkadas Jivanlal Sanghvi College of Engineering
-              </button>
+              </span>
               <button
-                onClick={() => handleShowImage('teaching-assistant.jpg')}
+                type="button"
+                onClick={() => handleShowImage('LOR Chinmay sir.jpg')}
                 className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
                 aria-label="View Certificate for Teaching Assistant role"
               >
@@ -87,25 +80,27 @@ const WorkExp = () => {
             <div className="ml-10">
               <h2 className="text-xl font-semibold">Teaching Assistant</h2>
               <p className="text-sm text-gray-400">Aug 2024 - May 2025</p>
-              <p className="mt-2 max-w-xl text-gray-300">
-                Assisted in teaching Processor Architecture and Organization and Information Security under Asst. Prof. Chinmay Raut, helping 80+ students grasp complex concepts. Created 15+ well-structured notes and interactive slides, improving student comprehension and engagement. Provided 1-on-1 mentorship to struggling students, resulting in a 20% improvement in average test scores.
-              </p>
+              <ul className="mt-2 max-w-xl text-gray-300 list-disc list-inside space-y-1">
+                <li>Assisted in teaching Processor Architecture and Organization and Information Security under Asst. Prof. Chinmay Raut, helping 80+ students grasp complex concepts.</li>
+                <li>Created 15+ well-structured notes and interactive slides, improving student comprehension and engagement.</li>
+                <li>Provided 1-on-1 mentorship to struggling students, resulting in a 20% improvement in average test scores.</li>
+              </ul>
             </div>
           </div>
 
           {/* Experience 2 - Web Developer */}
           <div className="mb-12" role="listitem">
             <div className="flex items-center mb-4">
-              <div className="w-6 h-6 rounded-full bg-green-500" aria-hidden="true"></div>
-              <button
-                onClick={() => handleDownload('suvidha')}
-                className="ml-4 text-2xl font-bold text-white cursor-pointer hover:underline focus:outline-none"
-                aria-label="Download Web Developer Internship PDF"
-              >
+              <div
+                className="w-6 h-6 rounded-full bg-green-500"
+                aria-hidden="true"
+              ></div>
+              <span className="ml-4 text-2xl font-bold text-white select-none">
                 Suvidha Foundation
-              </button>
+              </span>
               <button
-                onClick={() => handleShowImage('suvidha.jpg')}
+                type="button"
+                onClick={() => handleShowImage('Suvidha.jpeg')}
                 className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
                 aria-label="View Certificate for Web Developer role"
               >
@@ -115,25 +110,27 @@ const WorkExp = () => {
             <div className="ml-10">
               <h2 className="text-xl font-semibold">Web Developer</h2>
               <p className="text-sm text-gray-400">Jun 2024 - July 2024</p>
-              <p className="mt-2 max-w-xl text-gray-300">
-                Designed and developed responsive web pages for organizational campaigns, improving user engagement by 25% and streamlining access to resources for over 500 users, reducing load times by 40%.
-              </p>
+              <ul className="mt-2 max-w-xl text-gray-300 list-disc list-inside space-y-1">
+                <li>Designed and developed responsive web pages for organizational campaigns, improving user engagement by 25%.</li>
+                <li>Streamlined access to resources for over 500 users.</li>
+                <li>Reduced load times by 40%.</li>
+              </ul>
             </div>
           </div>
 
           {/* Experience 3 - Business Development Intern */}
           <div className="mb-12" role="listitem">
             <div className="flex items-center mb-4">
-              <div className="w-6 h-6 rounded-full bg-orange-500" aria-hidden="true"></div>
-              <button
-                onClick={() => handleDownload('parkit')}
-                className="ml-4 text-2xl font-bold text-white cursor-pointer hover:underline focus:outline-none"
-                aria-label="Download Business Development Internship PDF"
-              >
+              <div
+                className="w-6 h-6 rounded-full bg-orange-500"
+                aria-hidden="true"
+              ></div>
+              <span className="ml-4 text-2xl font-bold text-white select-none">
                 ParkIt.Biz
-              </button>
+              </span>
               <button
-                onClick={() => handleShowImage('parkit.jpg')}
+                type="button"
+                onClick={() => handleShowImage('Parkit.jpg')}
                 className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
                 aria-label="View Certificate for Business Development Intern role"
               >
@@ -141,27 +138,31 @@ const WorkExp = () => {
               </button>
             </div>
             <div className="ml-10">
-              <h2 className="text-xl font-semibold">Business Development and Sales Intern</h2>
+              <h2 className="text-xl font-semibold">
+                Business Development and Sales Intern
+              </h2>
               <p className="text-sm text-gray-400">June 2023 - August 2023</p>
-              <p className="mt-2 max-w-xl text-gray-300">
-                Executed targeted lead generation campaigns through social media channels, resulting in a 60% increase in engagement rates; analyzed campaign performance metrics to refine future strategies and optimize outreach efforts. Partnered with the HR department to optimize recruitment workflows and boost employee engagement, driving organizational growth and efficiency.
-              </p>
+              <ul className="mt-2 max-w-xl text-gray-300 list-disc list-inside space-y-1">
+                <li>Executed targeted lead generation campaigns through social media channels, resulting in a 60% increase in engagement rates.</li>
+                <li>Analyzed campaign performance metrics to refine future strategies and optimize outreach efforts.</li>
+                <li>Partnered with the HR department to optimize recruitment workflows and boost employee engagement, driving organizational growth and efficiency.</li>
+              </ul>
             </div>
           </div>
 
           {/* Experience 4 - Junior Manager */}
           <div className="mb-12" role="listitem">
             <div className="flex items-center mb-4">
-              <div className="w-6 h-6 rounded-full bg-red-500" aria-hidden="true"></div>
-              <button
-                onClick={() => handleDownload('aiesec')}
-                className="ml-4 text-2xl font-bold text-white cursor-pointer hover:underline focus:outline-none"
-                aria-label="Download Junior Manager Internship PDF"
-              >
+              <div
+                className="w-6 h-6 rounded-full bg-red-500"
+                aria-hidden="true"
+              ></div>
+              <span className="ml-4 text-2xl font-bold text-white select-none">
                 AIESEC in Mumbai
-              </button>
+              </span>
               <button
-                onClick={() => handleShowImage('aiesec.jpg')}
+                type="button"
+                onClick={() => handleShowImage('Aiesec.jpg')}
                 className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
                 aria-label="View Certificate for Junior Manager role"
               >
@@ -169,11 +170,15 @@ const WorkExp = () => {
               </button>
             </div>
             <div className="ml-10">
-              <h2 className="text-xl font-semibold">Junior Manager for Incoming Corporate Sector</h2>
+              <h2 className="text-xl font-semibold">
+                Junior Manager for Incoming Corporate Sector
+              </h2>
               <p className="text-sm text-gray-400">Feb 2022 - Jan 2023</p>
-              <p className="mt-2 max-w-xl text-gray-300">
-                Established partnerships with premier organizations like St. Regis and fostered collaborations with 8 entities across 3 countries to strengthen global ties. Orchestrated a high-impact conference in Silvassa for 100 delegates, generating ₹5.4 lakh in revenue and delivering an exceptional participant experience.
-              </p>
+              <ul className="mt-2 max-w-xl text-gray-300 list-disc list-inside space-y-1">
+                <li>Established partnerships with premier organizations like St. Regis and fostered collaborations with 8 entities across 3 countries to strengthen global ties.</li>
+                <li>Orchestrated a high-impact conference in Silvassa for 100 delegates, generating ₹5.4 lakh in revenue.</li>
+                <li>Delivered an exceptional participant experience.</li>
+              </ul>
             </div>
           </div>
         </div>
