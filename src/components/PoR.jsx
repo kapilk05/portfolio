@@ -1,83 +1,86 @@
-import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "./ui/card";
 
-const PositionOfResponsibility = () => {
-  const [currentImage, setCurrentImage] = useState(0);
+const positions = [
+  {
+    title: "Vice Chairperson Marketing",
+    organization: "DJSCE E-Cell",
+    period: "August 2023 - October 2024",
+    responsibilities: [
+      "Managed team of 12 committee members",
+      "Doubled initial budget from ₹50,000 through strategic fundraising",
+      "Secured partnerships through MOUs with sponsors",
+    ],
+  },
+  {
+    title: "Head of Finance Department",
+    organization: "DJSCE Trinity",
+    period: "December 2023 - September 2024",
+    responsibilities: [
+      "Managed ₹13 lakhs in funds",
+      "Maintained accurate financial records",
+      "Implemented financial controls and best practices",
+    ],
+  },
+  {
+    title: "Technical Head",
+    organization: "DJS CodeStars",
+    period: "October 2023 - August 2024",
+    responsibilities: [
+      "Conducted DSA lectures for competitive programming",
+      "Curated questions for competitions like \"Code Bounty\"",
+      "Mentored 15-member technical team",
+    ],
+  },
+  {
+    title: "Head of Corporate Relations",
+    organization: "AIESEC in Mumbai",
+    period: "December 2022 - March 2023",
+    responsibilities: [
+      "Developed recruitment strategies for international markets",
+      "Led team of 6 members in talent recruitment",
+      "Generated ₹4.3 lakhs cash flow",
+    ],
+  },
+];
 
-  const positions = [
-    {
-      id: 1,
-      title: "Secretary, DJSCE Ecell",
-      description:
-        "Managed a team of 22 core members and 70 committee members and led initiatives in the Entrepreneurship Cell, overseeing events and coordinating with external partners. Organizsed various speaker sessions Business Plan competetions and marketing events.",
-      image: "/PoR Images/Secretary E-Cell.jpg",
-    },
-    {
-      id: 2,
-      title: "Vice Chairperson Marketing, DJSCE Ecell",
-      description:
-        "Handled all marketing strategies, social media, and promotional activities for DJSCE Ecell. Brought in 1 lakh of sponsorships while mentoring 2 heads and 12 team members",
-      image: "/PoR Images/VCP Marketing E-Cell.jpg",
-    },
-    {
-      id: 3,
-      title: "Technical Head, DJSCE Codestars",
-      description:
-        "Led the technical team of 21 members, organizing coding events, developing questions based on DSA and Competetive Coding and fostering a tech community at DJSCE.",
-      image: "/PoR Images/Codestars.jpg",
-    },
-    {
-      id: 4,
-      title: "Head of the Finances Department, DJSCE Trinity",
-      description:
-        "Managed 13 Lakhs in finances and enhanced budget allocation for all the Trinity events, ensuring all transactions were accounted for.",
-      image: "/PoR Images/trinity.jpg",
-    },
-  ];
-
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % positions.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + positions.length) % positions.length);
-  };
-
+export default function PositionOfResponsibility() {
   return (
-    <div
-      id="position of responsibility"
-      className="w-full bg-gradient-to-b from-gray-800 to-black text-white py-16 px-4"
-    >
-      <div className="max-w-screen-lg mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8 border-b-4 inline border-gray-500">
+    <section id="positions" className="py-20 bg-secondary/50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-bold text-center mb-16"
+        >
           Positions of Responsibility
-        </h2>
-        <div className="relative">
-          <div className="image-container relative w-full h-[500px] rounded-lg overflow-hidden">
-            <img
-              src={positions[currentImage].image}
-              alt={positions[currentImage].title}
-              className="w-full h-full object-contain mx-auto"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 p-4">
-              <p className="text-xl">{positions[currentImage].description}</p>
-            </div>
-          </div>
-          <button
-            onClick={prevImage}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-3xl"
-          >
-            &#60;
-          </button>
-          <button
-            onClick={nextImage}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-3xl"
-          >
-            &#62;
-          </button>
+        </motion.h2>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {positions.map((position, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card className="bg-card/50 hover:bg-card/70 transition-colors duration-200 h-full">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-semibold text-accent-cyan mb-2">{position.title}</h3>
+                  <p className="text-lg font-medium mb-2">{position.organization}</p>
+                  <p className="text-muted-foreground mb-4">{position.period}</p>
+                  <ul className="text-muted-foreground space-y-2">
+                    {position.responsibilities.map((responsibility, idx) => (
+                      <li key={idx}>• {responsibility}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default PositionOfResponsibility;
+}

@@ -1,218 +1,156 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from "react";
+import { useTheme } from "./theme-provider";
+import djsceImg from '../assets/djsce_1753465150215.jpg';
+import skimaLogo from "../assets/skima.png";
+import parkitLogo from "../assets/parkit.png";
+import suvidhaLogo from "../assets/suvidha.png";
+import wedoraLogo from "../assets/wedora.png";
 
-const WorkExp = () => {
-  const [showImage, setShowImage] = useState(null);
-  const modalRef = useRef(null);
-
-  const handleShowImage = (fileName) => {
-    setShowImage(fileName);
-  };
-
-  const handleCloseImage = () => {
-    setShowImage(null);
-  };
-
-  useEffect(() => {
-    const handleEsc = (event) => {
-      if (event.key === 'Escape' && showImage) {
-        handleCloseImage();
-      }
-    };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, [showImage]);
-
-  useEffect(() => {
-    if (!showImage) return;
-
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        handleCloseImage();
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [showImage]);
-
-  return (
-    <div
-      id="work experience"
-      className="w-full min-h-screen bg-gradient-to-b from-gray-800 to-black text-white"
-    >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pb-8">
-          <p
-            id="work-exp-heading"
-            className="text-4xl font-bold inline border-b-4 border-gray-500"
-          >
-            Work Experience
-          </p>
-        </div>
-
-        {/* Timeline Container */}
-        <div
-          className="relative pl-10"
-          aria-labelledby="work-exp-heading"
-          role="list"
-        >
-          {/* Experience 1 - Teaching Assistant */}
-          <div className="mb-12" role="listitem">
-            <div className="flex items-center mb-4">
-              <div
-                className="w-6 h-6 rounded-full bg-blue-500"
-                aria-hidden="true"
-              ></div>
-              <span className="ml-4 text-2xl font-bold text-white select-none">
-                Dwarkadas Jivanlal Sanghvi College of Engineering
-              </span>
-              <button
-                type="button"
-                onClick={() => handleShowImage('LOR Chinmay sir.jpg')}
-                className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
-                aria-label="View Certificate for Teaching Assistant role"
-              >
-                View Certificate
-              </button>
-            </div>
-            <div className="ml-10">
-              <h2 className="text-xl font-semibold">Teaching Assistant</h2>
-              <p className="text-sm text-gray-400">Aug 2024 - May 2025</p>
-              <ul className="mt-2 max-w-xl text-gray-300 list-disc list-inside space-y-1">
-                <li>Assisted in teaching Processor Architecture and Organization and Information Security under Asst. Prof. Chinmay Raut, helping 80+ students grasp complex concepts.</li>
-                <li>Created 15+ well-structured notes and interactive slides, improving student comprehension and engagement.</li>
-                <li>Provided 1-on-1 mentorship to struggling students, resulting in a 20% improvement in average test scores.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Experience 2 - Web Developer */}
-          <div className="mb-12" role="listitem">
-            <div className="flex items-center mb-4">
-              <div
-                className="w-6 h-6 rounded-full bg-green-500"
-                aria-hidden="true"
-              ></div>
-              <span className="ml-4 text-2xl font-bold text-white select-none">
-                Suvidha Foundation
-              </span>
-              <button
-                type="button"
-                onClick={() => handleShowImage('Suvidha.jpeg')}
-                className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
-                aria-label="View Certificate for Web Developer role"
-              >
-                View Certificate
-              </button>
-            </div>
-            <div className="ml-10">
-              <h2 className="text-xl font-semibold">Web Developer</h2>
-              <p className="text-sm text-gray-400">Jun 2024 - July 2024</p>
-              <ul className="mt-2 max-w-xl text-gray-300 list-disc list-inside space-y-1">
-                <li>Designed and developed responsive web pages for organizational campaigns, improving user engagement by 25%.</li>
-                <li>Streamlined access to resources for over 500 users.</li>
-                <li>Reduced load times by 40%.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Experience 3 - Business Development Intern */}
-          <div className="mb-12" role="listitem">
-            <div className="flex items-center mb-4">
-              <div
-                className="w-6 h-6 rounded-full bg-orange-500"
-                aria-hidden="true"
-              ></div>
-              <span className="ml-4 text-2xl font-bold text-white select-none">
-                ParkIt.Biz
-              </span>
-              <button
-                type="button"
-                onClick={() => handleShowImage('Parkit.jpg')}
-                className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
-                aria-label="View Certificate for Business Development Intern role"
-              >
-                View Certificate
-              </button>
-            </div>
-            <div className="ml-10">
-              <h2 className="text-xl font-semibold">
-                Business Development and Sales Intern
-              </h2>
-              <p className="text-sm text-gray-400">June 2023 - August 2023</p>
-              <ul className="mt-2 max-w-xl text-gray-300 list-disc list-inside space-y-1">
-                <li>Executed targeted lead generation campaigns through social media channels, resulting in a 60% increase in engagement rates.</li>
-                <li>Analyzed campaign performance metrics to refine future strategies and optimize outreach efforts.</li>
-                <li>Partnered with the HR department to optimize recruitment workflows and boost employee engagement, driving organizational growth and efficiency.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Experience 4 - Junior Manager */}
-          <div className="mb-12" role="listitem">
-            <div className="flex items-center mb-4">
-              <div
-                className="w-6 h-6 rounded-full bg-red-500"
-                aria-hidden="true"
-              ></div>
-              <span className="ml-4 text-2xl font-bold text-white select-none">
-                AIESEC in Mumbai
-              </span>
-              <button
-                type="button"
-                onClick={() => handleShowImage('Aiesec.jpg')}
-                className="ml-4 px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 focus:outline-none"
-                aria-label="View Certificate for Junior Manager role"
-              >
-                View Certificate
-              </button>
-            </div>
-            <div className="ml-10">
-              <h2 className="text-xl font-semibold">
-                Junior Manager for Incoming Corporate Sector
-              </h2>
-              <p className="text-sm text-gray-400">Feb 2022 - Jan 2023</p>
-              <ul className="mt-2 max-w-xl text-gray-300 list-disc list-inside space-y-1">
-                <li>Established partnerships with premier organizations like St. Regis and fostered collaborations with 8 entities across 3 countries to strengthen global ties.</li>
-                <li>Orchestrated a high-impact conference in Silvassa for 100 delegates, generating ₹5.4 lakh in revenue.</li>
-                <li>Delivered an exceptional participant experience.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Certificate Image Modal */}
-      {showImage && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
-          className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4"
-        >
-          <div
-            ref={modalRef}
-            className="bg-white p-4 rounded-lg shadow-lg max-w-3xl max-h-full overflow-auto relative"
-          >
-            <button
-              onClick={handleCloseImage}
-              aria-label="Close certificate modal"
-              className="absolute top-2 right-2 text-3xl font-bold text-gray-600 hover:text-black focus:outline-none"
-            >
-              &times;
-            </button>
-            <img
-              src={`/workex/${showImage}`}
-              alt="Certificate"
-              className="max-w-full max-h-[80vh] object-contain"
-            />
-          </div>
-        </div>
-      )}
+// Company logos
+const CompanyLogos = {
+  SkimaAI: () => (
+    <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white">
+      <img src={skimaLogo} alt="Skima AI" className="w-full h-full object-contain p-[2px]" />
     </div>
-  );
+  ),
+  DJSCE: () => (
+    <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white">
+      <img src={djsceImg} alt="DJSCE" className="w-full h-full object-contain p-[2px]" />
+    </div>
+  ),
+  SuvidhaFoundation: () => (
+    <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white">
+      <img src={suvidhaLogo} alt="Suvidha Foundation" className="w-full h-full object-contain p-[2px]" />
+    </div>
+  ),
+  ParkItBiz: () => (
+    <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white">
+      <img src={parkitLogo} alt="ParkIt.biz" className="w-full h-full object-contain p-[2px]" />
+    </div>
+  ),
+  WedoraLogo: () => (
+    <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white">
+      <img src={wedoraLogo} alt="Wedora" className="w-full h-full object-contain p-[2px]" />
+    </div>
+  ),
 };
 
-export default WorkExp;
+const experiences = [
+  {
+    title: "Cofounder & CTO",
+    company: "Wedora",
+    period: "August 2025 - Present",
+    description: "Co-founded Wedora and led the technology vision, building scalable web solutions and managing the engineering team.",
+    details: [
+      "Architected and launched Wedora's core platform.",
+      "Oversaw a team of developers, ensuring timely delivery and high code quality.",
+      "Integrated modern tech stack including React, Node.js, and cloud services."
+    ],
+    logo: CompanyLogos.WedoraLogo,
+  },
+  {
+    title: "Software Developer",
+    company: "Skima AI",
+    period: "July 2025 - Present",
+    description: "Backend Ruby on Rails developer.",
+    details: [
+      "Optimized backend performance to <250ms response time.",
+      "Centralized batch statistics into a reusable Rails service.",
+      "Integrated Notion and Zapier automations.",
+      "Designed Notification Center system from scratch.",
+      "Integrated Unified.to ATS APIs for recruiter workflows."
+    ],
+    logo: CompanyLogos.SkimaAI,
+  },
+  {
+    title: "Web Developer",
+    company: "Suvidha Foundation",
+    period: "June 2024 - July 2024",
+    description: "Built efficient, low-latency campaign APIs using Spring Boot and MongoDB aggregation pipelines.",
+    details: [
+      "Used Redis caching for hot queries.",
+      "Delivered performance-focused React components.",
+      "Documented weekly metrics and improvements."
+    ],
+    logo: CompanyLogos.SuvidhaFoundation,
+  },
+  {
+    title: "Teaching Assistant",
+    company: "Dwarkadas J. Sanghvi College of Engineering",
+    period: "August 2024 - May 2025",
+    description: "Assisted in core courses: Processor Architecture and Information Security.",
+    details: [
+      "Created structured lecture materials.",
+      "Supported 100+ students with 1:1 guidance.",
+      "Facilitated understanding of advanced topics."
+    ],
+    logo: CompanyLogos.DJSCE,
+  },
+  {
+    title: "Business Development",
+    company: "ParkIt.biz",
+    period: "June 2023 - August 2023",
+    description: "Generated leads, conducted market research, and fostered partnerships.",
+    logo: CompanyLogos.ParkItBiz,
+  },
+];
+
+export default function ExperienceSection() {
+  const { theme } = useTheme();
+
+  return (
+    <section
+      className="py-20 px-5"
+      style={{
+        backgroundColor: `var(--app-bg)`,
+        color: `var(--app-text)`,
+      }}
+    >
+      <div className="max-w-3xl mx-auto relative">
+        <h2 className="text-3xl font-bold text-center mb-12">Work Experience</h2>
+
+        {/* Timeline line */}
+        <div className="absolute left-8 top-0 bottom-0 w-[2px] bg-accent" />
+
+        <div className="flex flex-col gap-10 relative">
+          {experiences.map((exp, idx) => (
+            <div key={idx} className="flex items-start relative">
+              {/* Timeline dot */}
+              <div className="w-4 h-4 rounded-full bg-accent absolute left-6 top-2" />
+
+              {/* Card */}
+              <div
+                className="ml-20 p-5 rounded-xl shadow-lg transition-transform hover:scale-105"
+                style={{
+                  backgroundColor: "var(--app-bg)",
+                  color: "var(--app-text)",
+                }}
+              >
+                <div className="flex justify-between flex-wrap mb-3">
+                  <div className="flex items-center gap-4">
+                    <exp.logo />
+                    <div>
+                      <h3 className="text-lg font-semibold text-accent">{exp.title}</h3>
+                      <p className="font-medium">{exp.company}</p>
+                    </div>
+                  </div>
+                  {exp.period && <span className="text-muted mt-1">{exp.period}</span>}
+                </div>
+
+                <p className="text-muted mb-3">{exp.description}</p>
+
+                {exp.details && (
+                  <ul className="pl-4 list-disc space-y-1">
+                    {exp.details.map((detail, i) => (
+                      <li key={i} className="text-muted">{detail}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

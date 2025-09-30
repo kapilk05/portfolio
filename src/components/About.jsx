@@ -1,8 +1,18 @@
 import React from "react";
+import { useTheme } from "./theme-provider";
 
 export default function AboutSection() {
+  const { theme } = useTheme();
+
   return (
-    <section id="about" style={{ padding: "80px 20px", background: "#f3f4f6" }}>
+    <section
+      id="about"
+      style={{
+        padding: "80px 20px",
+        backgroundColor: "var(--app-bg)",
+        color: "var(--app-text)",
+      }}
+    >
       <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
         {/* Heading */}
         <h2
@@ -27,13 +37,13 @@ export default function AboutSection() {
         >
           {/* Left Side - Text */}
           <div>
-            <p style={{ fontSize: "16px", color: "#555", marginBottom: "20px" }}>
+            <p style={{ fontSize: "16px", color: "var(--app-text)", marginBottom: "20px" }}>
               Recent Computer Engineering graduate with strong foundation in
               machine learning, data analytics, and software development. Over
               four years, I've combined technical research with leadership in
               business and student-led initiatives.
             </p>
-            <p style={{ fontSize: "16px", color: "#555" }}>
+            <p style={{ fontSize: "16px", color: "var(--app-text)" }}>
               My journey includes published research on neural networks,
               impactful ML projects, and leadership roles across
               entrepreneurship and technical cells. Passionate about using data
@@ -44,10 +54,11 @@ export default function AboutSection() {
           {/* Right Side - Quick Facts */}
           <div
             style={{
-              background: "#fff",
+              backgroundColor: theme === "dark" ? "#23272f" : "#f3f4f6",
               borderRadius: "12px",
               boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
               padding: "30px",
+              color: theme === "dark" ? "#f3f4f6" : "#18181b",
             }}
           >
             <h3

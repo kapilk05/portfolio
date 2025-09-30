@@ -1,122 +1,140 @@
-import React from "react";
+import { motion } from "framer-motion";
+import { Badge } from "./ui/badge";
 
-import html from "../assets/html.png";
-import css from "../assets/css.png";
-import javascript from "../assets/javascript.png";
-import reactImage from "../assets/react.png";
-import python from "../assets/python.png";
-import github from "../assets/github.png";
-import tailwind from "../assets/tailwind.png";
-import tensorflow from "../assets/portfolio/tensorflow.png";
-import keras from "../assets/portfolio/keras.png";
-import numpy from "../assets/portfolio/numpy.png";
-import pandas from "../assets/portfolio/pandas.png";
-import matplotlib from "../assets/portfolio/matplotlib.jpg";
+const skillCategories = [
+  {
+    title: "Languages & Programming",
+    skills: [
+      { name: "Java", color: "bg-orange-600/20 text-orange-400 border-orange-600/30" },
+      { name: "Python", color: "bg-green-500/20 text-green-400 border-green-500/30" },
+      { name: "C/C++", color: "bg-blue-600/20 text-blue-400 border-blue-600/30" },
+      { name: "JavaScript", color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" },
+      { name: "HTML", color: "bg-orange-500/20 text-orange-400 border-orange-500/30" },
+      { name: "CSS", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+      { name: "SQL", color: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30" },
+      { name: "R", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
+      { name: "Ruby", color: "bg-red-600/20 text-red-400 border-red-600/30" },
+    ],
+  },
+  {
+    title: "Web Development",
+    skills: [
+      { name: "Spring Boot", color: "bg-green-600/20 text-green-400 border-green-600/30" },
+      { name: "Spring Data JPA", color: "bg-green-500/20 text-green-400 border-green-500/30" },
+      { name: "JDBC", color: "bg-blue-600/20 text-blue-400 border-blue-600/30" },
+      { name: "Node.js", color: "bg-green-700/20 text-green-400 border-green-700/30" },
+      { name: "Express.js", color: "bg-gray-600/20 text-gray-300 border-gray-600/30" },
+      { name: "RESTful APIs", color: "bg-teal-600/20 text-teal-400 border-teal-600/30" },
+      { name: "React.js", color: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
+      { name: "Tailwind CSS", color: "bg-teal-500/20 text-teal-400 border-teal-500/30" },
+      { name: "Three.js", color: "bg-yellow-600/20 text-yellow-300 border-yellow-600/30" },
+      { name: "Ruby on Rails", color: "bg-red-700/20 text-red-400 border-red-700/30" },
+    ],
+  },
+  {
+    title: "Machine Learning & Data Science",
+    skills: [
+      { name: "TensorFlow", color: "bg-orange-500/20 text-orange-400 border-orange-500/30" },
+      { name: "PyTorch", color: "bg-red-500/20 text-red-400 border-red-500/30" },
+      { name: "Scikit-learn", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+      { name: "Keras", color: "bg-red-600/20 text-red-400 border-red-600/30" },
+      { name: "Hugging Face", color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" },
+      { name: "OpenCV", color: "bg-green-600/20 text-green-400 border-green-600/30" },
+      { name: "Pandas", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
+      { name: "NumPy", color: "bg-blue-600/20 text-blue-400 border-blue-600/30" },
+      { name: "Matplotlib", color: "bg-orange-600/20 text-orange-400 border-orange-600/30" },
+      { name: "Seaborn", color: "bg-teal-600/20 text-teal-400 border-teal-600/30" },
+      { name: "Plotly", color: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30" },
+      { name: "NLTK", color: "bg-green-500/20 text-green-400 border-green-500/30" },
+      { name: "SpaCy", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+    ],
+  },
+  {
+    title: "Databases",
+    skills: [
+      { name: "MySQL", color: "bg-blue-600/20 text-blue-400 border-blue-600/30" },
+      { name: "PostgreSQL", color: "bg-blue-900/20 text-blue-300 border-blue-900/30" },
+      { name: "MongoDB", color: "bg-green-800/20 text-green-400 border-green-800/30" },
+      { name: "SQLite", color: "bg-gray-600/20 text-gray-300 border-gray-600/30" },
+    ],
+  },
+  {
+    title: "DevOps & Cloud",
+    skills: [
+      { name: "AWS (ECS, Lambda, EC2, S3, RDS)", color: "bg-orange-600/20 text-orange-400 border-orange-600/30" },
+      { name: "Docker", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+      { name: "Kubernetes", color: "bg-blue-600/20 text-blue-400 border-blue-600/30" },
+      { name: "Maven", color: "bg-red-600/20 text-red-400 border-red-600/30" },
+      { name: "JUnit", color: "bg-green-600/20 text-green-400 border-green-600/30" },
+      { name: "Mockito", color: "bg-gray-600/20 text-gray-300 border-gray-600/30" },
+    ],
+  },
+  {
+    title: "Backend Frameworks & Tools",
+    skills: [
+      { name: "Flask", color: "bg-red-600/20 text-red-400 border-red-600/30" },
+      { name: "FastAPI", color: "bg-teal-600/20 text-teal-400 border-teal-600/30" },
+      { name: "Django", color: "bg-green-700/20 text-green-400 border-green-700/30" },
+      { name: "Git", color: "bg-orange-600/20 text-orange-400 border-orange-600/30" },
+      { name: "MLflow", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+      { name: "Weights & Biases", color: "bg-yellow-600/20 text-yellow-300 border-yellow-600/30" },
+    ],
+  },
+  {
+    title: "Development Tools",
+    skills: [
+      { name: "VSCode", color: "bg-blue-600/20 text-blue-400 border-blue-600/30" },
+      { name: "IntelliJ", color: "bg-red-600/20 text-red-400 border-red-600/30" },
+      { name: "Postman", color: "bg-orange-500/20 text-orange-400 border-orange-500/30" },
+      { name: "Swagger", color: "bg-green-500/20 text-green-400 border-green-500/30" },
+      { name: "Figma", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
+    ],
+  },
+];
 
-const Skills = () => {
-  const techs = [
-    {
-      id: 1,
-      src: html,
-      title: "HTML",
-      style: "shadow-orange-500",
-    },
-    {
-      id: 2,
-      src: css,
-      title: "CSS",
-      style: "shadow-blue-500",
-    },
-    {
-      id: 3,
-      src: javascript,
-      title: "JavaScript",
-      style: "shadow-yellow-500",
-    },
-    {
-      id: 4,
-      src: reactImage,
-      title: "React",
-      style: "shadow-blue-600",
-    },
-    {
-      id: 5,
-      src: tailwind,
-      title: "Tailwind",
-      style: "shadow-sky-400",
-    },
-    {
-      id: 6,
-      src: python,
-      title: "Python",
-      style: "shadow-yellow-400",
-    },
-    {
-      id: 7,
-      src: github,
-      title: "GitHub",
-      style: "shadow-gray-400",
-    },
-    {
-      id: 8,
-      src: tensorflow,
-      title: "TensorFlow",
-      style: "shadow-gray-600",
-    },
-    {
-      id: 9,
-      src: keras,
-      title: "Keras",
-      style: "shadow-red-500",
-    },
-    {
-      id: 10,
-      src: numpy,
-      title: "NumPy",
-      style: "shadow-blue-600",
-    },
-    {
-      id: 11,
-      src: pandas,
-      title: "Pandas",
-      style: "shadow-green-500",
-    },
-    {
-      id: 12,
-      src: matplotlib,
-      title: "Matplotlib",
-      style: "shadow-blue-500",
-    },
-  ];
-
+export default function Skills() {
   return (
-    <div
-      name="skills"
-      className="bg-gradient-to-b from-gray-800 to-black w-full min-h-screen"
-    >
-      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
-        <div>
-          <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
-              Tech Stack
-          </p>
-          <p className="py-6">These are the technologies I've worked with</p>
-        </div>
+    <section id="skills" className="py-20 bg-secondary/50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-bold text-center mb-16"
+        >
+          Skills
+        </motion.h2>
 
-        {/* Technologies Section */}
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
-          {techs.map(({ id, src, title, style }) => (
-            <div
-              key={id}
-              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
+        <div className="space-y-12">
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={categoryIndex}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
             >
-              <img src={src} alt={title} className="w-20 mx-auto" />
-              <p className="mt-4">{title}</p>
-            </div>
+              <h3 className="text-xl font-semibold mb-6 text-accent-cyan">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.div
+                    key={skillIndex}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Badge variant="outline" className={`${skill.color}`}>
+                      {skill.name}
+                    </Badge>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Skills;
+}

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button"; 
-import kapilPhoto from "@assets/Kapil photo_1753467707775.jpg";
+import { Button } from "./ui/button";
+import kapilPhoto from "../assets/Me.png";
 
 export function HeroSection() {
   const scrollToSection = (sectionId) => {

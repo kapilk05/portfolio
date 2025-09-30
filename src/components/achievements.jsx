@@ -56,16 +56,23 @@ export default function AchievementsSection() {
     <section id="achievements" style={{ padding: "80px 20px" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
         {/* Heading */}
-        <h2
+        <div
           style={{
-            fontSize: "2rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "40px",
+            background: "var(--app-bg)",
+            color: "var(--app-text)",
+            borderRadius: "12px",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+            padding: "20px",
+            marginBottom: "24px",
+            display: "flex",
+            alignItems: "center",
+            fontSize: "1.5rem",
+            fontWeight: 700,
+            justifyContent: "center"
           }}
         >
           Achievements
-        </h2>
+        </div>
 
         {/* Horizontal scroll container */}
         <div style={{ overflowX: "auto", paddingBottom: "16px" }}>
@@ -75,7 +82,8 @@ export default function AchievementsSection() {
                 key={index}
                 style={{
                   flex: "0 0 300px",
-                  background: "#f9fafb",
+                  background: "var(--app-card-bg, #23272f)",
+                  color: "var(--app-text)",
                   borderRadius: "12px",
                   padding: "20px",
                   textAlign: "center",
@@ -107,7 +115,7 @@ export default function AchievementsSection() {
                 >
                   {achievement.title}
                 </h3>
-                <p style={{ color: "#555", fontSize: "14px" }}>
+                <p style={{ color: "var(--app-text)", fontSize: "14px" }}>
                   {achievement.description}
                 </p>
               </div>
@@ -117,7 +125,7 @@ export default function AchievementsSection() {
 
         {/* Hint to scroll */}
         <div style={{ textAlign: "center", marginTop: "12px" }}>
-          <p style={{ fontSize: "14px", color: "#666" }}>
+          <p style={{ fontSize: "14px", color: "var(--app-text)" }}>
             ← Scroll to see more achievements →
           </p>
         </div>

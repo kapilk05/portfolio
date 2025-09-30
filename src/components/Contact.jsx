@@ -1,67 +1,93 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Contact = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert("Your message was sent!");
-    window.location.reload();
+export default function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [statusMessage, setStatusMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatusMessage("");
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setStatusMessage("✅ Message sent successfully! I'll get back to you soon.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch {
+      setStatusMessage("❌ Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
+  const handleInputChange = (field, value) => setFormData(prev => ({ ...prev, [field]: value }));
+
   return (
-    <div
-      id="get in touch"
-      className="w-full h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white"
-    >
-      <div className="flex flex-col justify-center max-w-screen-lg mx-auto h-full">
-        <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Reach Out to Me :)
-          </p>
-          <p className="py-4 text-lg text-gray-300">
-            📧 Email: <a href="mailto:your.email@example.com" className="underline text-cyan-400">kapilkashyap3105@gmail.com</a>  
-            <br />
-            📱 Phone: <span className="text-gray-100">+91-85914245664</span>
-          </p>
-          <p className="py-4 text-gray-400">...or just send a message using the form below!</p>
-        </div>
+    <section className="py-20 px-4 bg-background text-foreground">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-6">Connect with Me</h2>
+        <p className="text-center text-muted mb-12">
+          Have a question or want to discuss a project? Send me a message and I'll get back to you soon.
+        </p>
 
-        <div className="flex justify-center items-center">
-          <form
-            action="https://getform.io/f/da0e92ee-769a-464f-81e8-17d1347cc7c7"
-            method="POST"
-            className="flex flex-col w-full md:w-1/2"
-            onSubmit={handleSubmit}
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-              required
-              className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-              className="my-4 p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            />
-            <textarea
-              name="message"
-              placeholder="Enter your message"
-              rows="10"
-              required
-              className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            ></textarea>
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-xl font-semibold text-accent mb-4">Get in Touch</h3>
+            <ul className="space-y-2">
+              <li>📧 kapilkashyap3105@gmail.com</li>
+              <li>📞 +91 8591425664</li>
+              <li>🔗 linkedin.com/in/kapilkashyap05</li>
+            </ul>
+          </div>
 
-            <button className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300">
-              Let's talk
-            </button>
-          </form>
+          {/* Contact Form */}
+          <div className="bg-card p-6 rounded-xl shadow">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {["name", "email", "subject"].map((field) => (
+                <div key={field}>
+                  <label htmlFor={`contact-${field}`} className="block mb-1">
+                    {field.charAt(0).toUpperCase() + field.slice(1)}
+                  </label>
+                  <input
+                    id={`contact-${field}`}
+                    type={field === "email" ? "email" : "text"}
+                    value={formData[field]}
+                    onChange={(e) => handleInputChange(field, e.target.value)}
+                    placeholder={`Your ${field}`}
+                    required
+                    className="w-full p-2 border rounded bg-input text-foreground border-border"
+                  />
+                </div>
+              ))}
+
+              <div>
+                <label htmlFor="contact-message" className="block mb-1">Message</label>
+                <textarea
+                  id="contact-message"
+                  value={formData.message}
+                  onChange={(e) => handleInputChange("message", e.target.value)}
+                  placeholder="Your message..."
+                  rows={5}
+                  required
+                  className="w-full p-2 border rounded bg-input text-foreground border-border"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-2 bg-accent text-on-accent font-semibold rounded hover:opacity-90 transition"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+
+            {statusMessage && <p className="mt-4 text-center">{statusMessage}</p>}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Contact;
+}
