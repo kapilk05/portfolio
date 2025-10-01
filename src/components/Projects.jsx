@@ -29,7 +29,6 @@ const projects = [
     icon: Github,
     type: "Data Mining",
     techStack: ["Python", "GitHub API", "NLP", "Data Analysis"],
-    demoLink: "https://github.com/kapilk05/github-feature-extraction",
     githubLink: "https://github.com/kapilk05/github-feature-extraction",
     buttonText: "Demo",
   },
@@ -39,7 +38,6 @@ const projects = [
     icon: BarChart3,
     type: "Web Application",
     techStack: ["React", "Node.js", "Codeforces API", "Charts.js"],
-    demoLink: "https://github.com/kapilk05/cf-progress-pulse",
     githubLink: "https://github.com/kapilk05/cf-progress-pulse",
     buttonText: "Demo",
   },
@@ -49,7 +47,6 @@ const projects = [
     icon: Shield,
     type: "Predictive ML",
     techStack: ["Python", "DistilBERT", "Deep Learning", "Geospatial Analysis"],
-    demoLink: "https://github.com/kapilk05/Disease-Outbreak-Prediction",
     githubLink: "https://github.com/kapilk05/Disease-Outbreak-Prediction",
     buttonText: "Demo",
   },
@@ -113,7 +110,10 @@ export default function ProjectsSection() {
                       {project.demoLink && (
                         <Button
                           size="sm"
-                          className="bg-accent-cyan text-black hover:bg-accent-cyan/80 text-xs dark:text-black"
+                          className="bg-accent-cyan text-black dark:text-white hover:bg-accent-cyan/80 hover:text-white focus:ring-2 focus:ring-accent-cyan text-xs transition-colors duration-200"
+                          style={{
+                            color: 'var(--app-text)'
+                          }}
                           onClick={() => window.open(project.demoLink, "_blank")}
                         >
                           {project.buttonText}
@@ -122,8 +122,10 @@ export default function ProjectsSection() {
                       {project.githubLink && (
                         <Button
                           size="sm"
-                          variant="outline"
-                          className="text-xs"
+                          className="bg-transparent text-xs hover:bg-accent-cyan/20 hover:text-accent-cyan transition-colors duration-200"
+                          style={{
+                            color: 'var(--app-text)'
+                          }}
                           onClick={() => window.open(project.githubLink, "_blank")}
                         >
                           GitHub

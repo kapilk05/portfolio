@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
 import kapilPhoto from "../assets/Me.png";
 
 export function HeroSection() {
