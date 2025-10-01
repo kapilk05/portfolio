@@ -40,16 +40,9 @@ export default function Blogs() {
             <div className="text-xs font-semibold text-accent mb-2">{blog.category}</div>
             <div className="text-xl font-bold mb-4">{blog.title}</div>
             <div className="flex items-center justify-between mt-auto pt-4">
-              <div className="flex items-center space-x-2">
-                <img src="/avatar.png" alt="author" className="w-8 h-8 rounded-full" />
-                <div>
-                  <div className="text-sm font-medium">Nazuk Shukla</div>
-                  <div className="text-xs text-muted">{blog.date}</div>
-                </div>
-              </div>
               <button
                 className="ml-2 px-4 py-2 bg-accent text-on-accent rounded-lg font-semibold hover:opacity-90 transition"
-                onClick={() => navigate(blog.link)}
+                onClick={() => window.open(blog.link, '_blank')}
               >
                 Read More
               </button>

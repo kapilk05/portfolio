@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "wouter";
 import Blogs from "./components/blogs";
-import BlogAMP from "./blogs/BlogAMP";
+import BlogAMP from "./components/blogs/BlogAMP";
 import NotFound from "./pages/not-found";
 
 export default function BlogRoutes() {

@@ -13,6 +13,8 @@ import SocialLinks from "./components/SocialLinks";
 import Blogs from "./components/blogs";
 import { useTheme } from "./components/theme-provider";
 import Footer from "./components/footer";
+import BlogAMP from "./components/blogs/BlogAMP";
+import BlogRoutes from "./BlogRoutes";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -37,7 +39,7 @@ function App() {
       <Projects />
       <Achievements />
       <PoR />
-      <Blogs />
+      <BlogRoutes />
       <Contact />
       <SocialLinks />
       <Footer />
