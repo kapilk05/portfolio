@@ -46,8 +46,18 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-2xl md:text-3xl font-semibold text-accent-cyan mb-4"
         >
-          Code • Create • Innovate
+          AI Engineer • Full Stack Developer • Researcher
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-lg md:text-xl mb-8 max-w-2xl mx-auto"
+        >
+          Building intelligent solutions at the intersection of AI and web technologies. 
+          Passionate about creating impactful applications that solve real-world problems.
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

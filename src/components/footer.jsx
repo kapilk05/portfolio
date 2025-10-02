@@ -1,5 +1,6 @@
 import React from "react";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
+import { SiCodechef, SiLeetcode } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -27,6 +28,36 @@ export default function Footer() {
             onMouseLeave={e => e.currentTarget.style.color = "#555"}
           >
             <Linkedin size={24} />
+          </a>
+          <a
+            href="https://github.com/kapilk05"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#555", transition: "color 0.2s" }}
+            onMouseEnter={e => e.currentTarget.style.color = "#06b6d4"}
+            onMouseLeave={e => e.currentTarget.style.color = "#555"}
+          >
+            <Github size={24} />
+          </a>
+          <a
+            href="https://www.codechef.com/users/kashyap_kapil"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#555", transition: "color 0.2s" }}
+            onMouseEnter={e => e.currentTarget.style.color = "#06b6d4"}
+            onMouseLeave={e => e.currentTarget.style.color = "#555"}
+          >
+            <SiCodechef size={24} />
+          </a>
+          <a
+            href="https://leetcode.com/kashyap_kapil/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#555", transition: "color 0.2s" }}
+            onMouseEnter={e => e.currentTarget.style.color = "#06b6d4"}
+            onMouseLeave={e => e.currentTarget.style.color = "#555"}
+          >
+            <SiLeetcode size={24} />
           </a>
         </div>
 

@@ -9,7 +9,6 @@ import Projects from "./components/Projects";
 import Achievements from "./components/achievements";
 import PoR from "./components/PoR";
 import Contact from "./components/Contact";
-import SocialLinks from "./components/SocialLinks";
 import Blogs from "./components/blogs";
 import { useTheme } from "./components/theme-provider";
 import Footer from "./components/footer";
@@ -41,7 +40,6 @@ function App() {
       <PoR />
       <BlogRoutes />
       <Contact />
-      <SocialLinks />
       <Footer />
     </div>
   );
