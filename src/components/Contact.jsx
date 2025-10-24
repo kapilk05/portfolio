@@ -40,7 +40,8 @@ export default function ContactSection() {
                 <h4 className="font-medium mb-2">Professional Inquiries</h4>
                 <ul className="space-y-2">
                   <li>📧 kapilkashyap3105@gmail.com</li>
-                  <li>📞 +91 8591425664</li>
+                  <li>📧 kapilkashyap3105.work@gmail.com</li>
+                  <li>📞 +91 7304219586</li>
                   <li>🔗 linkedin.com/in/kapilkashyap05</li>
                 </ul>
               </div>

@@ -27,9 +27,7 @@ const skillCategories = [
       { name: "RESTful APIs", color: "bg-teal-600/20 text-teal-400 border-teal-600/30" },
       { name: "React.js", color: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
       { name: "Tailwind CSS", color: "bg-teal-500/20 text-teal-400 border-teal-500/30" },
-      { name: "Three.js", color: "bg-yellow-600/20 text-yellow-300 border-yellow-600/30" },
-      { name: "Ruby on Rails", color: "bg-red-700/20 text-red-400 border-red-700/30" },
-    ],
+      { name: "Three.js", color: "bg-yellow-600/20 text-yellow-300 border-yellow-600/30" }    ],
   },
   {
     title: "Machine Learning & Data Science",
@@ -63,10 +61,7 @@ const skillCategories = [
     skills: [
       { name: "AWS (ECS, Lambda, EC2, S3, RDS)", color: "bg-orange-600/20 text-orange-400 border-orange-600/30" },
       { name: "Docker", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
-      { name: "Kubernetes", color: "bg-blue-600/20 text-blue-400 border-blue-600/30" },
-      { name: "Maven", color: "bg-red-600/20 text-red-400 border-red-600/30" },
-      { name: "JUnit", color: "bg-green-600/20 text-green-400 border-green-600/30" },
-      { name: "Mockito", color: "bg-gray-600/20 text-gray-300 border-gray-600/30" },
+      { name: "Kubernetes", color: "bg-blue-600/20 text-blue-400 border-blue-600/30" }
     ],
   },
   {
@@ -75,6 +70,7 @@ const skillCategories = [
       { name: "Flask", color: "bg-red-600/20 text-red-400 border-red-600/30" },
       { name: "FastAPI", color: "bg-teal-600/20 text-teal-400 border-teal-600/30" },
       { name: "Django", color: "bg-green-700/20 text-green-400 border-green-700/30" },
+      { name: "Ruby on Rails", color: "bg-red-700/20 text-red-400 border-red-700/30" },
       { name: "Git", color: "bg-orange-600/20 text-orange-400 border-orange-600/30" },
       { name: "MLflow", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
       { name: "Weights & Biases", color: "bg-yellow-600/20 text-yellow-300 border-yellow-600/30" },

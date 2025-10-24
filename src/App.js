@@ -38,7 +38,7 @@ function App() {
       <Projects />
       <Achievements />
       <PoR />
-      <BlogRoutes />
+      <Blogs />
       <Contact />
       <Footer />
     </div>

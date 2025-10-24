@@ -33,13 +33,15 @@ const projects = [
     buttonText: "Demo",
   },
   {
-    title: "CF Progress Pulse",
-    description: "Tool to track Codeforces user ranking progress and send notifications, fostering engagement and competition among users.",
+    title: "Dynamic Neural Style Transfer for Artistic Image Generation using VGG-19",
+  description: `Have 5 citations on this paper.
+
+Introduces a dynamic neural style transfer method built on VGG-19 that adaptively fuses content and style representations to produce high-quality artistic images. The approach preserves scene semantics while transferring complex textures, supports adjustable stylization strength, and demonstrates improved visual fidelity over standard NST baselines.`,
     icon: BarChart3,
-    type: "Web Application",
-    techStack: ["React", "Node.js", "Codeforces API", "Charts.js"],
-    githubLink: "https://github.com/kapilk05/cf-progress-pulse",
-    buttonText: "Demo",
+    type: "Classical ML",
+    techStack: ["Python", "Machine Learning", "Deep Learning"],
+    githubLink: "https://ijercse.com/dynamic-neural-style.phpe",
+    buttonText: "Paper",
   },
   {
     title: "Disease Outbreak Prediction",
@@ -95,7 +97,7 @@ export default function ProjectsSection() {
                   <h3 className="text-lg font-semibold mb-3 group-hover:text-accent-cyan transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-4 flex-1">{project.description}</p>
+                  <p className="text-muted-foreground text-sm mb-4 flex-1 whitespace-pre-line">{project.description}</p>
 
                   <div className="space-y-3">
                     <div className="flex flex-wrap gap-1">
