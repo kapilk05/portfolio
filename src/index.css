@@ -16,6 +16,12 @@
   body {
     background: var(--app-bg);
     color: var(--app-text);
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s, background-image 0.3s;
+    background-image: var(--app-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 }

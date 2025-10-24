@@ -82,7 +82,7 @@ export default function AchievementsSection() {
                 key={index}
                 style={{
                   flex: "0 0 300px",
-                  background: "var(--app-card-bg, #23272f)",
+                  background: "var(--app-card-bg)",
                   color: "var(--app-text)",
                   borderRadius: "12px",
                   padding: "20px",

@@ -22,10 +22,14 @@ export function ThemeProvider({
       root.classList.add("dark");
       root.style.setProperty('--app-bg', '#18181b');
       root.style.setProperty('--app-text', '#f3f4f6');
+      root.style.setProperty('--app-bg-image', 'url("/src/assets/backgrounds/background when dark.jpg")');
+      root.style.setProperty('--app-card-bg', '#111112');
     } else {
       root.classList.add("light");
       root.style.setProperty('--app-bg', '#fff');
       root.style.setProperty('--app-text', '#18181b');
+      root.style.setProperty('--app-bg-image', 'none');
+      root.style.setProperty('--app-card-bg', '#fff');
     }
   }, [theme]);
 
