@@ -44,7 +44,9 @@ const experiences = [
     details: [
       "Architected and launched Wedora's core platform.",
       "Oversaw a team of developers, ensuring timely delivery and high code quality.",
-      "Integrated modern tech stack including React, Node.js, and cloud services."
+      "Integrated modern tech stack including React, Node.js, and cloud services.",
+      "Managed a team of 3 backend developers and 2 AI devs to develop the AI Agent for the platform."
+
     ],
     logo: CompanyLogos.WedoraLogo,
   },
@@ -52,13 +54,13 @@ const experiences = [
     title: "Software Developer",
     company: "Skima AI",
     period: "July 2025 - Present",
-    description: "Backend Ruby on Rails developer.",
+    description: "Backend Ruby on Rails developer. Star Employee Award - September 2025",
     details: [
       "Optimized backend performance to <250ms response time.",
       "Centralized batch statistics into a reusable Rails service.",
       "Integrated Notion and Zapier automations.",
       "Designed Notification Center system from scratch.",
-      "Integrated Unified.to ATS APIs for recruiter workflows."
+      "Integrated Unified.to and Knit ATS APIs for automating ATS Integration workflows."
     ],
     logo: CompanyLogos.SkimaAI,
   },
@@ -87,10 +89,16 @@ const experiences = [
     logo: CompanyLogos.DJSCE,
   },
   {
-    title: "Business Development",
+    title: "Founders Office Intern",
     company: "ParkIt.biz",
     period: "June 2023 - August 2023",
     description: "Generated leads, conducted market research, and fostered partnerships.",
+    details: [
+      "Conducted market analysis to identify growth opportunities.",
+      "Generated revenue leads through targeted outreach campaigns and raised 1.5 lakhs in potential business.",
+      "Worked as an HR in managing attendance and payroll for other interns.",
+      "Looked out for potential tendors that could aid the company in growth."
+    ],
     logo: CompanyLogos.ParkItBiz,
   },
 ];
